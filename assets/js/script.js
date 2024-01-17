@@ -43,30 +43,26 @@ function generatePassword() {
   if (!yesLower && !yesUpper && !yesNumbers && !yesSpecial) {
     return "please pick one of the four criteria";
   } 
+
+  if (yesLower && yesUpper && yesNumbers && yesSpecial) {
+    passGen = passGen.concat(lowerCase, upperCase, numbers, special);
+  } 
   
   if (yesLower) {
     passGen = passGen.concat(lowerCase);
-   } else {
-    !passGen[randomIndex];
-   };
-  
+  }
+
   if (yesUpper) {
     passGen = passGen.concat(upperCase);
-   } else {
-    !passGen[randomIndex];
-   };
+  }
 
   if (yesNumbers) {
     passGen = passGen.concat(numbers);
-   } else {
-    !passGen[randomIndex];
-   };
+  }
 
   if (yesSpecial) {
     passGen = passGen.concat(special);
-   } else {
-    !passGen[randomIndex];
-   };
+  };
 
 // generate random password  
   var password = "";
